@@ -25,7 +25,7 @@ app.get("/", (req,res) => {
 
 // Error Middleware
 
-app.use(errorHandler)
+app.use(errorhandler())
 // COnnect to the mongoDB
 const PORT = process.env.PORT || 5000
 

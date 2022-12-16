@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const dotenv = require("dotenv").config()
 const cors = require('cors');
 const userRoute = require("./routes/userRoute")
-const errorHandler = require("./middlewares/errorMiddleware")
+const errorhandler = require("./middlewares/errorMiddleware")
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.get("/", (req,res) => {
 
 // Error Middleware
 
-app.use(errorHandler)
+app.use(errorhandler)
 // COnnect to the mongoDB
 const PORT = process.env.PORT || 5000
 
