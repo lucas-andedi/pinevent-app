@@ -22,6 +22,8 @@ const registerUser = asyncHandler( async (req,res) => {
         res.status(400)
         throw new Error("Email has already been registered") 
     }
+    // Encrpt password before saving to DB
+    const salt = await bcrypt.gen
 
     // Create a new user
 

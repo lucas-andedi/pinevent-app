@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
-const bcrypt = require('bcryptjs');
+
 
 
 const registerUser = asyncHandler( async (req,res) => {
@@ -30,6 +30,7 @@ const registerUser = asyncHandler( async (req,res) => {
         email,
         password
     })
+});
     if(user) {
         const  { _id,name,email,photo,bio } = user
         res.status(201).json({
@@ -39,8 +40,7 @@ const registerUser = asyncHandler( async (req,res) => {
         res.status(400)
         throw new Error("Invalid user data")
     }
-    
-});
-    module.exports = {
+
+module.exports = {
     registerUser
 }

@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
-const bcrypt = require('bcryptjs');
+
 
 
 const registerUser = asyncHandler( async (req,res) => {
@@ -31,9 +31,9 @@ const registerUser = asyncHandler( async (req,res) => {
         password
     })
     if(user) {
-        const  { _id,name,email,photo,bio } = user
+        const  { _id,name,email,photo,bio,password } = user
         res.status(201).json({
-            _id,name,email,photo,bio
+            _id,name,email,photo,bio,password
         })
     }else {
         res.status(400)

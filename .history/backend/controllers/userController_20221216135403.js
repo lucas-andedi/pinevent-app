@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
-const bcrypt = require('bcryptjs');
+
 
 
 const registerUser = asyncHandler( async (req,res) => {
@@ -40,7 +40,7 @@ const registerUser = asyncHandler( async (req,res) => {
         throw new Error("Invalid user data")
     }
     
-});
     module.exports = {
+    });
     registerUser
 }

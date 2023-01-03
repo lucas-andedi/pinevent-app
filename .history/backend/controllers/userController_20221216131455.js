@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
-const bcrypt = require('bcryptjs');
+
 
 
 const registerUser = asyncHandler( async (req,res) => {
@@ -15,32 +15,15 @@ const registerUser = asyncHandler( async (req,res) => {
         res.status(400)
         throw new Error("Password must be at least 6 characters")
     }
-    // Check if email already exists
-    const userExists = await User.findOne({ email })
+
+    const userExists = await User.findOne({email})
 
     if(userExists) {
         res.status(400)
         throw new Error("Email has already been registered") 
     }
-
-    // Create a new user
-
-    const user = await User.create({
-        name,
-        email,
-        password
-    })
-    if(user) {
-        const  { _id,name,email,photo,bio } = user
-        res.status(201).json({
-            _id,name,email,photo,bio
-        })
-    }else {
-        res.status(400)
-        throw new Error("Invalid user data")
-    }
-    
 });
-    module.exports = {
+
+module.exports = {
     registerUser
 }
