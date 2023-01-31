@@ -119,14 +119,11 @@ const logout = asyncHandler(async (req, res) => {
 
 // Get User Data
 
-const getUser = asyncHandler( async (req,res) => {
-    res.send("We successfully gotten user data")
-})
+const getUser = as
 
 
     module.exports = {
     registerUser,
     loginUser,
-    logout,
-    getUser
+    logout
 }

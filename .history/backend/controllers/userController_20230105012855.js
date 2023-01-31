@@ -120,7 +120,7 @@ const logout = asyncHandler(async (req, res) => {
 // Get User Data
 
 const getUser = asyncHandler( async (req,res) => {
-    res.send("We successfully gotten user data")
+    res.send("Get user Data")
 })
 
 
@@ -128,5 +128,5 @@ const getUser = asyncHandler( async (req,res) => {
     registerUser,
     loginUser,
     logout,
-    getUser
+    get
 }
