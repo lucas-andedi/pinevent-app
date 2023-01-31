@@ -146,8 +146,6 @@ const loginStatus = asyncHandler ( async (req,res) => {
     if(verified) {
         return res.json(true)
     }
-    return res.json(false)
-
     
 })
 

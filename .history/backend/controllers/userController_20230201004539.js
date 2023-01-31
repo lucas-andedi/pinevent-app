@@ -140,14 +140,6 @@ const loginStatus = asyncHandler ( async (req,res) => {
 
         return res.json(false)
     }
-    // Verify Token
-    const verified = jwt.verify(token, process.env.JWT_SECRET)
-    
-    if(verified) {
-        return res.json(true)
-    }
-    return res.json(false)
-
     
 })
 

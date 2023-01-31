@@ -120,10 +120,10 @@ const logout = asyncHandler(async (req, res) => {
 // Get User Data
 
 const getUser = asyncHandler( async (req,res) => {
-    const user = await User.findById(req.user._id)
+    const user = User.findById(req.user._id)
 
     if(user) {
-        const { _id,name,email,photo,bio } = user
+        const  { _id,name,email,photo,bio } = user
         res.status(200).json({
             _id,name,email,photo,bio
         })
@@ -133,28 +133,10 @@ const getUser = asyncHandler( async (req,res) => {
     }
 })
 
-// Get Login status
-const loginStatus = asyncHandler ( async (req,res) => {
-    const token = req.cookies.token
-    if(!token) {
-
-        return res.json(false)
-    }
-    // Verify Token
-    const verified = jwt.verify(token, process.env.JWT_SECRET)
-    
-    if(verified) {
-        return res.json(true)
-    }
-    return res.json(false)
-
-    
-})
 
     module.exports = {
     registerUser,
     loginUser,
     logout,
-    getUser,
-    loginStatus
+    getUser
 }
