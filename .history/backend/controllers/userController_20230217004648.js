@@ -181,14 +181,7 @@ const updateUser = asyncHandler (async(req,res)=> {
 
 })
 const changePassword = asyncHandler( async(req,res) => {
-    const user = await User.findById(req.user._id)
-
-    const { oldPassword, password} = req.body
-
-    if(!oldPassword || !password) {
-        res.status(404)
-        throw new Error('User not found')
-    }
+    res.send("Password changed")
 })
     module.exports = {
     registerUser,

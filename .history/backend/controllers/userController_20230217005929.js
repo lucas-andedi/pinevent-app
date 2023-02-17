@@ -185,10 +185,7 @@ const changePassword = asyncHandler( async(req,res) => {
 
     const { oldPassword, password} = req.body
 
-    if(!oldPassword || !password) {
-        res.status(404)
-        throw new Error('User not found')
-    }
+    if()
 })
     module.exports = {
     registerUser,

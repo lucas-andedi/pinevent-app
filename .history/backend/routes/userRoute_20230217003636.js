@@ -9,7 +9,7 @@ router.get("/logout", logout)
 router.get("/getuser", protect, getUser)
 router.get("/loggedin", loginStatus)
 router.patch("/updateuser",protect, updateUser)
-router.patch("/changepassword",protect, changePassword)
+router.patch("/changepassword",protect, changePasassword)
 
 module.exports = router;
 
